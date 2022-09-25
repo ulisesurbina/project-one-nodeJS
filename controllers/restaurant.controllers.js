@@ -1,5 +1,5 @@
-const { Restaurant } = require("../models/restaurant.model");
-const { Review } = require("../models/review.model");
+const { Restaurant } = require("../models/restaurant.model.js");
+const { Review } = require("../models/review.model.js");
 
 const createRestaurant = async (req, res) => {
     try {

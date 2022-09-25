@@ -1,4 +1,4 @@
-const { Review } = require("../models/review.model");
+const { Review } = require("../models/review.model.js");
 
 // Utils
 const { catchAsync } = require("../utils/catchAsync.util.js");
@@ -9,7 +9,7 @@ const checkRole = catchAsync(async (req, res, next) => {
         if (sessionUser.role !== "admin") {
             return res
                 .status(400)
-                .json({ status: "error", messages: "access denied" });
+                .json({ status: "error", messages: "Access denied" });
         }
         next();
 });

@@ -6,8 +6,8 @@ const {
     mealById,
     updateMeal,
     deleteMeal,
-} = require("../controllers/meal.controllers");
-const { checkRole } = require("../middlewares/restaurant.middlewares");
+} = require("../controllers/meal.controllers.js");
+const { checkRole } = require("../middlewares/restaurant.middlewares.js");
 const { createMealValidators } = require("../middlewares/validators.middlewares.js");
 
 const mealRouter = express.Router();

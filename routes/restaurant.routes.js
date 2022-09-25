@@ -1,10 +1,10 @@
 const express = require("express");
-const { Restaurant } = require("../models/restaurant.model");
+const { Restaurant } = require("../models/restaurant.model.js");
 const { protectSession } = require("../middlewares/auth.middlewares.js");
 const {
     checkRole,
     checkUserReview,
-} = require("../middlewares/restaurant.middlewares");
+} = require("../middlewares/restaurant.middlewares.js");
 
 const {
     createRestaurant,
@@ -15,8 +15,8 @@ const {
     reviewRestaurant,
     updateReviewById,
     deleteReviewById,
-} = require("../controllers/restaurant.controllers");
-const { createRestaurantValidators } = require("../controllers/validations");
+} = require("../controllers/restaurant.controllers.js");
+const { createRestaurantValidators } = require("../middlewares/validators.middlewares.js");
 
 const restaurantRouter = express.Router();
 

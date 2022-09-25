@@ -48,28 +48,6 @@ const protectUsersAccount = (req, res, next) => {
     next();
 };
 
-// const protectPostOwners = (req, res, next) => {
-//     const { sessionUser, post } = req;
-//     if (sessionUser.id !== post.id) {
-//         return res.status(403).json({
-//             status: "error",
-//             message: "This post does not belong to you.",
-//         });
-//     }
-//     next();
-// };
-
-// const protectCommentsOwners = (req, res, next) => {
-//     const { sessionUser, comment } = req;
-//     if (sessionUser.id !== comment.id) {
-//         return res.status(403).json({
-//             status: "error",
-//             message: "This comment does not belong to you.",
-//         });
-//     }
-//     next();
-// };
-
 const protectAdmin = (req, res, next) => {
     const { sessionUser } = req;
     if (sessionUser.role !== "admin") {
@@ -84,7 +62,5 @@ const protectAdmin = (req, res, next) => {
 module.exports = {
     protectSession,
     protectUsersAccount,
-    // protectPostOwners,
-    // protectCommentsOwners,
     protectAdmin,
 };
