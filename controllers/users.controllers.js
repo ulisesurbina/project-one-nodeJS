@@ -121,9 +121,10 @@ const login = catchAsync(async (req, res, next) => {
     const { email, password } = req.body;
 
     const user = await User.findOne({
-        attributes: { exclude: ["password", "createdAt", "updatedAt"] },
+        attributes: { exclude: ["createdAt", "updatedAt"] },
         where: { email, status: "active" },
     });
+    console.log(user);
 
     if (!user || !(await bcrypt.compare(password, user.password))) {
         return res.status(400).json({
